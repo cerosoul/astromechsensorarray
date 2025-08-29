@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astromech Sensor Array</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #000;
+      color: #00ff00;
+    }
+    #game-container {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border: 2px solid #00ff00;
+      border-radius: 5px;
+    }
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(5, 50px);
+      gap: 5px;
+      margin: 20px auto;
+    }
+    .line {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #00ff00;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      background-color: #1a2b3c;
+    }
+    input {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+      background-color: #000;
+      color: #00ff00;
+      border: 1px solid #00ff00;
+      width: 80px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #00ff00;
+      color: #000;
+      border: none;
+      border-radius: 3px;
+    }
+    button:hover {
+      background-color: #00cc00;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <h1>ASTROMECH SENSOR ARRAY</h1>
+    <p>ANALYZE SENSOR DATA: COUNT LINES AT EACH ANGLE IN THE 5x5 GRID.</p>
+    <div id="grid">
+      <div class="line">↘</div>
+      <div class="line"></div>
+      <div class="line">│</div>
+      <div class="line">↙</div>
+      <div class="line"></div>
+      <div class="line">↘</div>
+      <div class="line">│</div>
+      <div class="line"></div>
+      <div class="line">↙</div>
+      <div class="line">↘</div>
+      <div class="line"></div>
+      <div class="line">│</div>
+      <div class="line">↙</div>
+      <div class="line"></div>
+      <div class="line">↘</div>
+      <div class="line">│</div>
+      <div class="line"></div>
+      <div class="line">↙</div>
+      <div class="line">↘</div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line">│</div>
+      <div class="line">↙</div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <div>
+      <input type="number" id="angle45" placeholder="45° (↘)">
+      <input type="number" id="angle90" placeholder="90° (│)">
+      <input type="number" id="angle135" placeholder="135° (↙)">
+    </div>
+    <button onclick="checkAnswer()">SUBMIT</button>
+    <div id="result"></div>
+  </div>
+  <script>
+    function checkAnswer() {
+      const angle45 = parseInt(document.getElementById('angle45').value);
+      const angle90 = parseInt(document.getElementById('angle90').value);
+      const angle135 = parseInt(document.getElementById('angle135').value);
+      const resultDiv = document.getElementById('result');
+      if (angle45 === 5 && angle90 === 4 && angle135 === 4) {
+        resultDiv.innerHTML = 'SENSOR DATA VERIFIED. PASSWORD: <strong>ANGLETIMER</strong>';
+        resultDiv.style.color = '#00ff00';
+      } else {
+        resultDiv.innerHTML = 'SENSOR DATA CORRUPTED. REANALYZE.';
+        resultDiv.style.color = '#ff0000';
+      }
+    }
+  </script>
+</body>
+</html>
