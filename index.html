@@ -72,30 +72,30 @@
     <p>ANALYZE SENSOR DATA: COUNT LINES AT EACH ANGLE IN THE 5x5 GRID.</p>
     <div id="grid">
       <div class="line">↘</div>
-      <div class="line"></div>
-      <div class="line">│</div>
-      <div class="line">↙</div>
-      <div class="line"></div>
-      <div class="line">↘</div>
-      <div class="line">│</div>
-      <div class="line"></div>
-      <div class="line">↙</div>
-      <div class="line">↘</div>
-      <div class="line"></div>
-      <div class="line">│</div>
-      <div class="line">↙</div>
-      <div class="line"></div>
-      <div class="line">↘</div>
-      <div class="line">│</div>
-      <div class="line"></div>
-      <div class="line">↙</div>
-      <div class="line">↘</div>
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line">│</div>
-      <div class="line">↙</div>
-      <div class="line"></div>
-      <div class="line"></div>
+    <div class="line">—</div>
+    <div class="line">│</div>
+    <div class="line">↙</div>
+    <div class="line">—</div>
+    <div class="line">↘</div>
+    <div class="line">│</div>
+    <div class="line">↘</div>
+    <div class="line">↙</div>
+    <div class="line">↘</div>
+    <div class="line">↙</div>
+    <div class="line">│</div>
+    <div class="line">↙</div>
+    <div class="line">—</div>
+    <div class="line">↘</div>
+    <div class="line">│</div>
+    <div class="line">—</div>
+    <div class="line">↙</div>
+    <div class="line">↘</div>
+    <div class="line">↘</div>
+    <div class="line">↙</div>
+    <div class="line">│</div>
+    <div class="line">↙</div>
+    <div class="line">—</div>
+    <div class="line">↙</div>
     </div>
     <div>
       <input type="number" id="angle45" placeholder="45° (↘)">
@@ -111,7 +111,7 @@
       const angle90 = parseInt(document.getElementById('angle90').value);
       const angle135 = parseInt(document.getElementById('angle135').value);
       const resultDiv = document.getElementById('result');
-      if (angle45 === 5 && angle90 === 4 && angle135 === 4) {
+      if (angle45 === 7 && angle90 === 5 && angle135 === 8) {
         resultDiv.innerHTML = 'SENSOR DATA VERIFIED. PASSWORD: <strong>ANGLETIMER</strong>';
         resultDiv.style.color = '#00ff00';
       } else {
