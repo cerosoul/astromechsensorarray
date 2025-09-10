@@ -112,7 +112,8 @@
       const angle135 = parseInt(document.getElementById('angle135').value);
       const resultDiv = document.getElementById('result');
       if (angle45 === 7 && angle90 === 5 && angle135 === 8) {
-        resultDiv.innerHTML = 'SENSOR DATA VERIFIED. PASSWORD: <strong>ANGLETIMER</strong>';
+        resultDiv.innerHTML = 'SENSOR DATA VERIFIED. PASSWORD: <strong>ANGLETIMER</strong>' +
+          '<br/><br/> Go to the Office to continue.';
         resultDiv.style.color = '#00ff00';
       } else {
         resultDiv.innerHTML = 'SENSOR DATA CORRUPTED. REANALYZE.';
